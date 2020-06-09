@@ -1,0 +1,5 @@
+# To ignore OS files
+.DS_Store
+
+# To ignore extra files
+.vscode
