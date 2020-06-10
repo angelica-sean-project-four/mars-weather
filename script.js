@@ -23,8 +23,14 @@ app.getDayStats = (data) => {
 			<h2>Earth Day: ${dayStats.date}</h2>
 		  </div>
 		  <div class="temp-container">
-            <h3>Max: ${dayStats.tempMax}</h3>
-			<h3>Min: ${dayStats.tempMin}</h3>
+			<h3>
+			  <i class="fas fa-temperature-high max-temp"></i>
+			  ${dayStats.tempMax}
+			</h3>
+			<h3>
+			  <i class="fas fa-temperature-low min-temp"></i>
+			  ${dayStats.tempMin}
+			</h3>
 		  </div>
       </div>`
 
