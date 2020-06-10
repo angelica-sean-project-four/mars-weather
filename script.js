@@ -17,12 +17,15 @@ app.getDayStats = (data) => {
     }
     
     const weatherEntry =
-      `<div>
-        <h2>${dayStats.solDay}</h2>
-        <h3>${dayStats.tempMax}</h3>
-        <h3>${dayStats.tempMin}</h3>
-        <h4>${dayStats.date}</h4>
-        <h5>${dayStats.season}</h5>
+	  `<div class="today daily-entry">
+	      <div class="sol-date-container">
+            <h2>Sol Day: ${dayStats.solDay}</h2>
+			<h2>Earth Day: ${dayStats.date}</h2>
+		  </div>
+		  <div class="temp-container">
+            <h3>Max: ${dayStats.tempMax}</h3>
+			<h3>Min: ${dayStats.tempMin}</h3>
+		  </div>
       </div>`
 
     weeklyTemp.push(weatherEntry)
