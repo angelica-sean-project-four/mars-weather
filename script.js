@@ -20,7 +20,7 @@ app.getDayStats = (data) => {
 	  `<div class="current-day-container-stats weekly-container-stats">
 	      <div class="sol-date-container">
 					<h2>
-						<i class="far fa-sun" title="Sol Day"></i>
+						<i class="fas fa-sun" title="Sol Day"></i>
 						Sol ${dayStats.solDay}
 					</h2>
 					<h2>
