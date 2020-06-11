@@ -10,8 +10,8 @@ app.getDayStats = (data) => {
   for (let i = 0; i < solKeys.length; i++) {
     const dayStats = {
       solDay: solKeys[i],
-      tempMax: data[solKeys[i]]["AT"]["mx"].toFixed(1),
-      tempMin: data[solKeys[i]]["AT"]["mn"].toFixed(1),
+      tempMax: ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1),
+      tempMin: ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1),
       date: data[solKeys[i]]["First_UTC"].slice(0, -10),
       season: data[solKeys[i]]["Season"],
     }
@@ -31,11 +31,11 @@ app.getDayStats = (data) => {
         <div class="temp-container">
           <h3>
             <i class="fas fa-temperature-high max-temp" title="Maximum Temperature"></i>
-            High: ${dayStats.tempMax} F
+            High: <span>${dayStats.tempMax} C°</span>
           </h3>
           <h3>
             <i class="fas fa-temperature-low min-temp" title="Minimum Temperature"></i>
-            Low: ${dayStats.tempMin} F
+            Low: <span>${dayStats.tempMin} C°</span>
           </h3>
         </div>
       </div>`
@@ -44,8 +44,26 @@ app.getDayStats = (data) => {
 
     $('.weekly-weather-container').append(weatherEntry);
     $('.current-day-container').append(weeklyTemp[6]);
+    
   }
 }
+
+
+// app.convertTemperature = () => {
+//   $('.convert-temperature').on('click', () => {
+//     dayStats.tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1),
+//       dayStats.tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1),
+//       console.log(dayStats.tempMax);
+//     console.log(dayStats.tempMin);
+//   });
+// }
+
+// function temperatureConverter(valNum) {
+//   valNum = parseFloat(valNum);
+//   document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+// } 
+
+
 
 app.init = () => {
   $.ajax({
