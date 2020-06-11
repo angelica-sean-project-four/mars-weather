@@ -17,33 +17,33 @@ app.getDayStats = (data) => {
     }
     
     const weatherEntry =
-	  `<div class="today daily-entry">
+	  `<div class="current-day-container-stats weekly-container-stats">
 	      <div class="sol-date-container">
 					<h2>
-						<i class="far fa-sun" title="Sol day"></i>
-						${dayStats.solDay}
+						<i class="far fa-sun" title="Sol Day"></i>
+						Sol ${dayStats.solDay}
 					</h2>
 					<h2>
-						<i class="fas fa-globe-americas" title="Current day"></i> 
+						<i class="fas fa-globe-americas" title="Current Day"></i> 
 						${dayStats.date}
 					</h2>
-		  </div>
-		  <div class="temp-container">
-				<h3>
-					<i class="fas fa-temperature-high max-temp" title="Max temperature"></i>
-					${dayStats.tempMax}
-				</h3>
-				<h3>
-					<i class="fas fa-temperature-low min-temp" title="Min temperature"></i>
-					${dayStats.tempMin}
-				</h3>
-		  </div>
+        </div>
+        <div class="temp-container">
+          <h3>
+            <i class="fas fa-temperature-high max-temp" title="Maximum Temperature"></i>
+            High: ${dayStats.tempMax} F
+          </h3>
+          <h3>
+            <i class="fas fa-temperature-low min-temp" title="Minimum Temperature"></i>
+            Low: ${dayStats.tempMin} F
+          </h3>
+        </div>
       </div>`
 
     weeklyTemp.push(weatherEntry)
 
-    $('.weekly-weather').append(weatherEntry);
-    $('.current-day').append(weeklyTemp[6]);
+    $('.weekly-weather-container').append(weatherEntry);
+    $('.current-day-container').append(weeklyTemp[6]);
   }
 }
 

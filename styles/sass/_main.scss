@@ -1,29 +1,8 @@
-main {
-	width: 25%;
-}
-
-.weekly-weather {
-  font-size: 1.2rem; 
-  margin: 25px 0px;
-	
-	.daily-entry {
-		border-radius: 20px;
-
-		div {
-			background: $entry-background;
-			line-height: 2rem;
-			margin-bottom: 5%;
-			padding: 3%;
-		}
-
-		div:first-child {
-			padding-right: 50px;
-		}
-		
-		h2:first-child,
-		h3:first-child {
-			margin-bottom: 0px;
-		}	
+.weekly-weather-container .weekly-container-stats {
+	font-size: 1.2rem;
+	width: 420px;
+	margin-bottom: 20px;
+	.sol-date-container {
+		margin-right: 20px;
 	}
 }
-
