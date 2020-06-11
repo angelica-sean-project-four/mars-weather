@@ -1,6 +1,9 @@
 body {
   font-family: $primary-font;
   font-size: 10px;
+
+  display: flex;
+	justify-content: space-between;
 }
 
 h1, h2, h3, h4 {
@@ -42,4 +45,24 @@ button {
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
+}
+
+.today {
+	display: flex;
+}
+
+.fa-sun {
+	color: $sun;
+}
+
+.fa-globe-americas {
+	color: $earth;
+}
+
+.max-temp {
+	color: $max-temp;
+}
+
+.min-temp {
+	color: $min-temp;
 }

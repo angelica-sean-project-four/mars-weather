@@ -238,6 +238,12 @@ textarea {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 h1, h2, h3, h4 {
@@ -281,18 +287,36 @@ button {
   margin: 0 auto;
 }
 
-body {
+.today {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+.fa-sun {
+  color: #E8DE2A;
+}
+
+.fa-globe-americas {
+  color: #228B22;
+}
+
+.max-temp {
+  color: #FF0000;
+}
+
+.min-temp {
+  color: #0000FF;
 }
 
 header {
   padding: 150px 0px 50px;
-  background: plum;
+  width: 50%;
+}
+
+header .wrapper {
+  background: rgba(192, 192, 192, 0.5);
+  border-radius: 20px;
 }
 
 h1 {
@@ -304,23 +328,40 @@ h1 {
   margin-top: 100px;
 }
 
-.today {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.current-day .today div:first-child {
+  padding-right: 10%;
 }
 
-.today h2:first-child,
-.today h3:first-child {
+.current-day .today h2:first-child,
+.current-day .today h3:first-child {
   margin-bottom: 40px;
+}
+
+main {
+  width: 25%;
 }
 
 .weekly-weather {
   font-size: 1.2rem;
   margin: 25px 0px;
-  background-color: papayawhip;
 }
 
-.daily-entry div {
-  padding: 0px 25px;
+.weekly-weather .daily-entry {
+  border-radius: 20px;
+}
+
+.weekly-weather .daily-entry div {
+  background: rgba(192, 192, 192, 0.5);
+  line-height: 2rem;
+  margin-bottom: 5%;
+  padding: 3%;
+}
+
+.weekly-weather .daily-entry div:first-child {
+  padding-right: 50px;
+}
+
+.weekly-weather .daily-entry h2:first-child,
+.weekly-weather .daily-entry h3:first-child {
+  margin-bottom: 0px;
 }

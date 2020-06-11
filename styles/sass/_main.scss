@@ -1,18 +1,29 @@
-// main {
-// 	width: 40%;
-// }
+main {
+	width: 25%;
+}
 
 .weekly-weather {
   font-size: 1.2rem; 
   margin: 25px 0px;
+	
+	.daily-entry {
+		border-radius: 20px;
 
-  
-  background-color: papayawhip;
+		div {
+			background: $entry-background;
+			line-height: 2rem;
+			margin-bottom: 5%;
+			padding: 3%;
+		}
+
+		div:first-child {
+			padding-right: 50px;
+		}
+		
+		h2:first-child,
+		h3:first-child {
+			margin-bottom: 0px;
+		}	
+	}
 }
 
-.daily-entry {
-
-  div {
-	  padding: 0px 25px;
-  }
-}
