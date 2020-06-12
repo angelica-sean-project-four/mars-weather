@@ -94,12 +94,24 @@ $('.apod').on('click', function(){
     const { explanation, title, url} = data;
     
     const apodInfo = 
-      `<h3>${title}</h3>
+			`<div class="exit-container">
+				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
+			</div>
+			<h3>${title}</h3>
       <img src="${url}" alt="${title}">
       <p>${explanation}</p>`;
-    $('.apod-container').append(apodInfo);
+		$('.apod-container').append(apodInfo);
+		
+		$('.modal-background').fadeIn();
+
   })
 })
+
+$('.apod-container').on('click', ".exit", function () {
+	$('.modal-background').fadeOut();
+})
+
+
 
 app.init = () => {
   $.ajax({
