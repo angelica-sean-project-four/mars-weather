@@ -12,79 +12,21 @@ app.getDayStats = (data) => {
   for (let i = 0; i < solKeys.length; i++) {
 
     const solDay = parseInt(solKeys[i]) + 1;
-    let date = data[solKeys[i]]["First_UTC"].slice(5, -10).split("-");
-    // 2020/06/10 - June 10, 2020
+	///////////////////////////////////////////
+	// 2020/06/10 - June 10, 2020
+		const unixEpochTime = data[solKeys[i]]["First_UTC"];
+		
+		const newDate = new Date(unixEpochTime);
+		const dateFull = new Date(newDate.setTime(newDate.getTime() + 1 * 86400000));
 
-		if ((date[0] == 1 || date[0] == 3 || date[0] == 5 || date[0] == 7 || date[0] == 8 || date[0] == 10 || date[0] == 12) && date[1] == 31) {
-			date[0]++;
-			date[1] = 1;
-		} else if ((date[0] == 4 || date[0] == 6 || date[0] == 9 || date[0] == 11) && date[1] == 30) {
-			date[0]++;
-			date[1] = 1;
-		} else if (date[0] == 2 && date[1] == 28) {
-			date[0]++;
-			date[1] = 1;
-		} else {
-			date[1]++
-		}
+		const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
-		switch (date[0]) {
-			case "01":
-			case 1:
-				date[0] = "Jan";
-				break;
-			case "02":
-			case 2:
-				date[0] = "Feb";
-				break;
-			case "03":
-			case 3:
-				date[0] = "Mar";
-				break;
-			case "04":
-			case 4:
-				date[0] = "Apr";
-				break;
-			case "05":
-			case 5:
-				date[0] = "May";
-				break;
-			case "06":
-			case 6:
-				date[0] = "Jun";
-				break;
-			case "07":
-			case 7:
-				date[0] = "Jul";
-				break;
-			case "08":
-			case 8:
-				date[0] = "Aug";
-				break;
-			case "09":
-			case 9:
-				date[0] = "Sept";
-				break;
-			case "10":
-			case 10:
-				date[0] = "Oct";
-				break;
-			case "11":
-			case 11:
-				date[0] = "Nov";
-				break;
-			case "12":
-			case 12:
-				date[0] = "Dec";
-				break;
-			default:
-				date[0] = date[0];
-				break;
-		}
+		const dateMonth = dateFull.getMonth();
+		const dateDay = dateFull.getDate();		
 
-		date = date.join(" ");
-
-		console.log(date);
+		const date = `${monthNames[dateMonth]} ${dateDay}`;
+    //////////////////////////////////////////////
+		
     let tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
     let tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1);
     
