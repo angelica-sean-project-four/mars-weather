@@ -2,16 +2,7 @@ const app = {};
 
 app.apiUrl = `https://api.nasa.gov/insight_weather/?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB&feedtype=json&ver=1.0`
 
-// const animation = (target, string) => {
-//   $(target).fadeOut(function () {
-//     $(this).html(string).fadeIn();
-//   });
-// };
-
-// animation('.temperature-max', `${tempMax} F°`);
-// animation('.temperature-min', `${tempMin} F°`);
-// animation('.temperature-max', `${tempMax} C°`);
-// animation('.temperature-min', `${tempMin} C°`);
+app.apiApodUrl = `https://api.nasa.gov/planetary/apod?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB`;
 
 app.getDayStats = (data) => {
   const solKeys = data.sol_keys;
@@ -19,7 +10,7 @@ app.getDayStats = (data) => {
   const weeklyTemp = [];
 
   for (let i = 0; i < solKeys.length; i++) {
- 
+
     const solDay = parseInt(solKeys[i]) + 1;
     const date = data[solKeys[i]]["First_UTC"].slice(0, -10);
     // 2020/06/10 - June 10, 2020
@@ -29,8 +20,8 @@ app.getDayStats = (data) => {
     
     $('.convert-temperature').on('click', () => {
 
-      // if it is showing celsius
-      if (tempMax === ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1)) {
+    // if it is showing celsius
+    if (tempMax === ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1)) {
 
         
         tempMax = ((data[solKeys[i]]["AT"]["mx"] * (9 / 5)) + 32).toFixed(1);
@@ -60,8 +51,8 @@ app.getDayStats = (data) => {
 
       }
 
-    });
-    
+    });    
+
     const weatherEntry =
 	  `<div class="current-day-container-stats weekly-container-stats">
 	      <div class="sol-date-container">
@@ -86,7 +77,6 @@ app.getDayStats = (data) => {
         </div>
       </div>`
 
-      
     $('.weekly-weather-container').append(weatherEntry);
     
     weeklyTemp.push(weatherEntry)
@@ -95,10 +85,21 @@ app.getDayStats = (data) => {
   }
 }
 
-// function temperatureConverter(valNum) {
-//   valNum = parseFloat(valNum);
-//   document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
-// } 
+$('.apod').on('click', function(){
+  $.ajax({
+    url: app.apiApodUrl,
+    method: 'GET',
+    dataType: 'json',
+  }).then(function(data){
+    const { explanation, title, url} = data;
+    
+    const apodInfo = 
+      `<h3>${title}</h3>
+      <img src="${url}" alt="${title}">
+      <p>${explanation}</p>`;
+    $('.apod-container').append(apodInfo);
+  })
+})
 
 app.init = () => {
   $.ajax({
@@ -107,9 +108,23 @@ app.init = () => {
     dataType: 'json',
   }).then(function(data) {
     app.getDayStats(data);
-  });
+  }); 
 }
 
 $(function(){
   app.init();
 });
+
+
+
+
+// const animation = (target, string) => {
+//   $(target).fadeOut(function () {
+//     $(this).html(string).fadeIn();
+//   });
+// };
+
+// animation('.temperature-max', `${tempMax} F°`);
+// animation('.temperature-min', `${tempMin} F°`);
+// animation('.temperature-max', `${tempMax} C°`);
+// animation('.temperature-min', `${tempMin} C°`);
