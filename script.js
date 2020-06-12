@@ -12,9 +12,54 @@ app.getDayStats = (data) => {
   for (let i = 0; i < solKeys.length; i++) {
 
     const solDay = parseInt(solKeys[i]) + 1;
-    const date = data[solKeys[i]]["First_UTC"].slice(0, -10);
+    let date = data[solKeys[i]]["First_UTC"].slice(5, -10).split("-");
     // 2020/06/10 - June 10, 2020
-    console.log(date);
+
+		switch (date[0]) {
+			case "01":
+				date[0] = "Jan";
+				break;
+			case "02":
+				date[0] = "Feb";
+				break;
+			case "03":
+				date[0] = "Mar";
+				break;
+			case "04":
+				date[0] = "Apr";
+				break;
+			case "05":
+				date[0] = "May";
+				break;
+			case "06":
+				date[0] = "Jun";
+				break;
+			case "07":
+				date[0] = "Jul";
+				break;
+			case "08":
+				date[0] = "Aug";
+				break;
+			case "09":
+				date[0] = "Sept";
+				break;
+			case "10":
+				date[0] = "Oct";
+				break;
+			case "11":
+				date[0] = "Nov";
+				break;
+			case "12":
+				date[0] = "Dec";
+				break;
+			default:
+				date[0] = day[0];
+				break;
+		}
+
+		date = date.join(" ");
+
+		console.log(date);
     let tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
     let tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1);
     
