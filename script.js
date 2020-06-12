@@ -10,11 +10,6 @@ const animation = (target, string) => {
   });
 };
 
-// animation('.temperature-max', `${tempMax} F°`);
-// animation('.temperature-min', `${tempMin} F°`);
-// animation('.temperature-max', `${tempMax} C°`);
-// animation('.temperature-min', `${tempMin} C°`);
-
 app.getDayStats = (data) => {
   const solKeys = data.sol_keys;
 
@@ -104,9 +99,11 @@ $('.apod').on('click', function(){
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
 			<h3>${title}</h3>
-      <img src="${url}" alt="${title}">
+			<div class="image-container">
+				<img src="${url}" alt="${title}">
+			</div>
       <p>${explanation}</p>`;
-		$('.apod-container').append(apodInfo);
+		$('.apod-container').empty().append(apodInfo);
 		
 		$('.modal-background').fadeIn();
 
@@ -116,8 +113,6 @@ $('.apod').on('click', function(){
 $('.apod-container').on('click', ".exit", function () {
 	$('.modal-background').fadeOut();
 })
-
-
 
 app.init = () => {
   $.ajax({
