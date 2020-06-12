@@ -30,39 +30,51 @@ app.getDayStats = (data) => {
 
 		switch (date[0]) {
 			case "01":
+			case 1:
 				date[0] = "Jan";
 				break;
 			case "02":
+			case 2:
 				date[0] = "Feb";
 				break;
 			case "03":
+			case 3:
 				date[0] = "Mar";
 				break;
 			case "04":
+			case 4:
 				date[0] = "Apr";
 				break;
 			case "05":
+			case 5:
 				date[0] = "May";
 				break;
 			case "06":
+			case 6:
 				date[0] = "Jun";
 				break;
 			case "07":
+			case 7:
 				date[0] = "Jul";
 				break;
 			case "08":
+			case 8:
 				date[0] = "Aug";
 				break;
 			case "09":
+			case 9:
 				date[0] = "Sept";
 				break;
 			case "10":
+			case 10:
 				date[0] = "Oct";
 				break;
 			case "11":
+			case 11:
 				date[0] = "Nov";
 				break;
 			case "12":
+			case 12:
 				date[0] = "Dec";
 				break;
 			default:
