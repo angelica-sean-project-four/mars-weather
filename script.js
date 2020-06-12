@@ -15,6 +15,19 @@ app.getDayStats = (data) => {
     let date = data[solKeys[i]]["First_UTC"].slice(5, -10).split("-");
     // 2020/06/10 - June 10, 2020
 
+		if ((date[0] == 1 || date[0] == 3 || date[0] == 5 || date[0] == 7 || date[0] == 8 || date[0] == 10 || date[0] == 12) && date[1] == 31) {
+			date[0]++;
+			date[1] = 1;
+		} else if ((date[0] == 4 || date[0] == 6 || date[0] == 9 || date[0] == 11) && date[1] == 30) {
+			date[0]++;
+			date[1] = 1;
+		} else if (date[0] == 2 && date[1] == 28) {
+			date[0]++;
+			date[1] = 1;
+		} else {
+			date[1]++
+		}
+
 		switch (date[0]) {
 			case "01":
 				date[0] = "Jan";
@@ -53,11 +66,9 @@ app.getDayStats = (data) => {
 				date[0] = "Dec";
 				break;
 			default:
-				date[0] = day[0];
+				date[0] = date[0];
 				break;
 		}
-		
-		date[1]++
 
 		date = date.join(" ");
 
