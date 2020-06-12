@@ -22,6 +22,8 @@ app.getDayStats = (data) => {
  
     const solDay = parseInt(solKeys[i]) + 1;
     const date = data[solKeys[i]]["First_UTC"].slice(0, -10);
+    // 2020/06/10 - June 10, 2020
+    console.log(date);
     let tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
     let tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1);
     
@@ -38,6 +40,7 @@ app.getDayStats = (data) => {
         console.log(tempMin);
         console.log('C');
         
+        // loop this?
         $('.temperature-max').text(`${tempMax} F°`);
         $('.temperature-min').text(`${tempMin} F°`);
 
@@ -51,6 +54,7 @@ app.getDayStats = (data) => {
         console.log(tempMin);
         console.log('F');
 
+        // loop this?
         $('.temperature-max').text(`${tempMax} C°`);
         $('.temperature-min').text(`${tempMin} C°`);
 
