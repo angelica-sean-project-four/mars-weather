@@ -56,6 +56,8 @@ app.getDayStats = (data) => {
 				date[0] = day[0];
 				break;
 		}
+		
+		date[1]++
 
 		date = date.join(" ");
 
