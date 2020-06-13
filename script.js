@@ -21,16 +21,14 @@ app.getDayStats = (data) => {
 
 		// grabbing solDay and earth date
     const solDay = parseInt(solKeys[i]) + 1;
-		const unixEpochTime = data[solKeys[i]]["First_UTC"];
-		// let unixEpochTime = "2020-06-06T03:26:48Z";
-		// unixEpochTime = "2020-06-07T04:06:23Z";
+		const unixEpochTime = data[solKeys[i]]['First_UTC'];
 		
 		// converting date from YYYY/MM/DD to Month, Day
 		const newDate = new Date(unixEpochTime);
 		const dateFull = new Date(newDate.setTime(newDate.getTime() + 1.05 * 86400000));
 		
 
-		const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+		const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 		const dateMonth = dateFull.getMonth();
 		const dateDay = dateFull.getDate();		
@@ -38,22 +36,22 @@ app.getDayStats = (data) => {
     const date = `${monthNames[dateMonth]} ${dateDay}`;		
 		
 		// converting temperature to celsius
-    let tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
-    let tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1);
+    let tempMax = ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1);
+    let tempMin = ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1);
     
     $('.convert-temperature').on('click', () => {
     // if it is showing celsius
-    if (tempMax === ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1)) {
-				tempMax = ((data[solKeys[i]]["AT"]["mx"] * (9 / 5)) + 32).toFixed(1);
-				tempMin = ((data[solKeys[i]]["AT"]["mn"] * (9 / 5)) + 32).toFixed(1);
+    if (tempMax === ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1)) {
+				tempMax = ((data[solKeys[i]]['AT']['mx'] * (9 / 5)) + 32).toFixed(1);
+				tempMin = ((data[solKeys[i]]['AT']['mn'] * (9 / 5)) + 32).toFixed(1);
 
 				animation(`#high-${i}`, `${tempMax} F°`);
         animation(`#low-${i}`, `${tempMin} F°`);
         animation('.convert-temperature', `Fahrenheit <i class="fas fa-arrow-right"></i> Celsius`);
         // if it is showing fahrenheit
       } else {
-        tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
-        tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1);
+        tempMax = ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1);
+        tempMin = ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1);
 
 				animation(`#high-${i}`, `${tempMax} C°`);
         animation(`#low-${i}`, `${tempMin} C°`);
