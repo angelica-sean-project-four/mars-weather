@@ -1,8 +1,10 @@
 const app = {};
 
+// mars weather API
 app.apiUrl = `https://api.nasa.gov/insight_weather/?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB&feedtype=json&ver=1.0`
 
-app.apiApodUrl = `https://api.nasa.gov/planetary/apod?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB`;
+// astrology photo of the day API
+app.apiAPODUrl = `https://api.nasa.gov/planetary/apod?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB`;
 
 const animation = (target, string) => {
   $(target).fadeOut(function () {
@@ -43,14 +45,16 @@ app.getDayStats = (data) => {
 				tempMin = ((data[solKeys[i]]["AT"]["mn"] * (9 / 5)) + 32).toFixed(1);
 
 				animation(`#high-${i}`, `${tempMax} F°`);
-				animation(`#low-${i}`, `${tempMin} F°`);
+        animation(`#low-${i}`, `${tempMin} F°`);
+        animation('.convert-temperature', `Fahrenheit <i class="fas fa-arrow-right"></i> Celsius`);
         // if it is showing fahrenheit
       } else {
         tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
         tempMin = ((data[solKeys[i]]["AT"]["mn"] - 32) * (5 / 9)).toFixed(1);
 
 				animation(`#high-${i}`, `${tempMax} C°`);
-				animation(`#low-${i}`, `${tempMin} C°`);
+        animation(`#low-${i}`, `${tempMin} C°`);
+        animation('.convert-temperature', `Celsius <i class="fas fa-arrow-right"></i> Fahrenheit`);
       }
     });    
 
@@ -88,13 +92,13 @@ app.getDayStats = (data) => {
 
 $('.apod').on('click', function(){
   $.ajax({
-    url: app.apiApodUrl,
+    url: app.apiAPODUrl,
     method: 'GET',
     dataType: 'json',
   }).then(function(data){
     const { explanation, title, url} = data;
     
-    const apodInfo = 
+    const APODInfo = 
 			`<div class="exit-container">
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
@@ -103,7 +107,7 @@ $('.apod').on('click', function(){
 				<img src="${url}" alt="${title}">
 			</div>
       <p>${explanation}</p>`;
-		$('.apod-container').empty().append(apodInfo);
+		$('.apod-container').empty().append(APODInfo);
 		
 		$('.modal-background').fadeIn();
 
