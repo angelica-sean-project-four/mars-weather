@@ -32,7 +32,9 @@ app.getDayStats = (data) => {
 		const dateMonth = dateFull.getMonth();
 		const dateDay = dateFull.getDate();		
 
-		const date = `${monthNames[dateMonth]} ${dateDay}`;
+    const date = `${monthNames[dateMonth]} ${dateDay}`;
+    
+    // console.log(unixEpochTime, newDate, dateFull, dateMonth, dateDay)
 		
 		// converting temperature to celsius
     let tempMax = ((data[solKeys[i]]["AT"]["mx"] - 32) * (5 / 9)).toFixed(1);
