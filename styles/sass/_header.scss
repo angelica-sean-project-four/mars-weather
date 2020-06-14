@@ -6,6 +6,7 @@ header {
 	}
 	h2 {
 		font-size: 2rem;
+		color: $primary-color;
 	}
 }
 
@@ -27,14 +28,19 @@ header {
 	}
 }
 
+.current-day-container-stats h2 {
+	color: $secondary-color;
+}
+
 .current-day-container-stats h3 {
 	width: 250px;
 }
 
 .sol-date-container {
-	border-right: 3px solid $primary-color;
+	border-right: 3px solid $secondary-color;
 	padding-right: 50px;
 }
+
 
 header p {
 	margin-top: 10px;
@@ -46,15 +52,16 @@ header p {
 	align-items: flex-start;
 	button {
 		font-size: 1.5rem;
-		background-color: $card-background-color;
-		border: 3px solid $primary-color;
+		border: 3px solid $tertiary-color;
+		background-color: $primary-color;
 		border-radius: 5px;
 		padding: 10px;
 		margin-top: 40px;
-		transition: background-color .35s;
+		transition: background-color .35s, color .35s;
 		&:hover,
 		&:focus {
 			background-color: inherit;
+			color: $primary-color;
 		}
 	}
 }
