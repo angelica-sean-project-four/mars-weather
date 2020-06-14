@@ -1,0 +1,35 @@
+@media (max-width: 768px) {
+	.wrapper {
+		flex-direction: column;
+	}
+
+	main {
+		width: 100%;
+		// display: flex;
+		// flex-flow: row wrap;
+
+		.weekly-weather-container {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			.weekly-container-stats {
+				width: 47%;
+			}
+		}
+		
+	}
+
+	footer {
+		flex-direction: column;
+		text-align: center;
+		padding: 5%;
+		
+		.nasa,
+		.contact {
+			width: 100%;
+		}
+		.nasa{
+			margin-bottom: 40px;
+		}
+	}
+}

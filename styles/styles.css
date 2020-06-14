@@ -583,3 +583,45 @@ footer a:hover, footer a:focus {
 .contact i {
   color: #fa9572;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main {
+    width: 100%;
+  }
+  main .weekly-weather-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .weekly-weather-container .weekly-container-stats {
+    width: 47%;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    padding: 5%;
+  }
+  footer .nasa,
+  footer .contact {
+    width: 100%;
+  }
+  footer .nasa {
+    margin-bottom: 40px;
+  }
+}
