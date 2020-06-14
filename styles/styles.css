@@ -591,6 +591,13 @@ footer a:hover, footer a:focus {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  header {
+    width: 100%;
+  }
+  header .heading-container h1,
+  header .heading-container h2 {
+    text-align: center;
+  }
   main {
     width: 100%;
   }
