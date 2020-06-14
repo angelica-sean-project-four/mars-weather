@@ -1,27 +1,29 @@
 header {
 	padding: 200px 0 200px;
-	h1 {
-		font-size: 3rem;
-		margin-bottom: 50px;
-		font-family: $secondary-font;
-		font-weight: 600;
-		padding-bottom: 10px;
-		border-bottom: 3px solid $tertiary-color;
-	}
-	h2 {
-		font-size: 2rem;
-		color: $primary-color;
-	}
+}
+
+.heading-container h1 {
+	font-size: 3rem;
+	margin-bottom: 50px;
+	font-family: $secondary-font;
+	font-weight: 600;
+	padding-bottom: 10px;
+	border-bottom: 3px solid $tertiary-color;
+}
+
+.heading-container h2 {
+	font-size: 2rem;
+	color: $primary-color;
+	margin-bottom: 50px;
 }
 
 .current-day-container-stats {
 	display: flex;
 	justify-content: space-between;
-	width: 600px;
 	align-items: center;
+	width: 600px;
 	font-size: 2rem;
 	padding: 40px;
-	margin-top: 30px;
 	background: $card-background-color;
 	border-radius: 5px;
 	h2:first-child {
