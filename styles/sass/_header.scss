@@ -1,10 +1,12 @@
 header {
-	padding: 150px 0 50px;
+	padding: 200px 0 200px;
 	h1 {
 		font-size: 3rem;
 		margin-bottom: 50px;
 		font-family: $secondary-font;
 		font-weight: 600;
+		padding-bottom: 10px;
+		border-bottom: 3px solid $tertiary-color;
 	}
 	h2 {
 		font-size: 2rem;
@@ -91,10 +93,16 @@ header p {
 		width: 600px;
 		padding: 40px;
 		border-radius: 5px;
-		a {
-			text-decoration: underline;
-			color: $tertiary-color;
-			font-weight: 700;
-		}
 	}
+}
+
+.header-image-container figcaption a {
+		text-decoration: underline;
+		color: $tertiary-color;
+		font-weight: 700;
+		transition: color .35s;
+		&:hover,
+		&:focus {
+			color: $secondary-color;
+		}
 }

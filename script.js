@@ -3,7 +3,7 @@ const app = {};
 // mars weather API
 app.apiUrl = `https://api.nasa.gov/insight_weather/?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB&feedtype=json&ver=1.0`
 
-// astrology photo of the day API
+// astronomy photo of the day API
 app.apiAPODUrl = `https://api.nasa.gov/planetary/apod?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB`;
 
 const animation = (target, string) => {
