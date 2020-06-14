@@ -598,6 +598,14 @@ footer a:hover, footer a:focus {
   header .heading-container h2 {
     text-align: center;
   }
+  header .button-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header-image-container figcaption {
+    padding: 20px;
+  }
   main {
     width: 100%;
   }
@@ -629,6 +637,33 @@ footer a:hover, footer a:focus {
     width: 100%;
   }
   footer .nasa {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .current-day-container-stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .current-day-container-stats .sol-date-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border-right: none;
+    border-bottom: 3px solid #121212;
+  }
+  header .current-day-container-stats.weekly-container-stats {
+    height: 500px;
     margin-bottom: 40px;
   }
 }

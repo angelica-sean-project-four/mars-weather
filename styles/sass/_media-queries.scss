@@ -5,18 +5,20 @@
 
 	header {
 		width: 100%;
-		
 		.heading-container h1,
 		.heading-container h2 {
 			text-align: center;
+		}
+		.button-container {
+			align-items: center;
+		}
+		.header-image-container figcaption {
+			padding: 20px;
 		}
 	}
 
 	main {
 		width: 100%;
-		// display: flex;
-		// flex-flow: row wrap;
-
 		.weekly-weather-container {
 			display: flex;
 			flex-flow: row wrap;
@@ -25,19 +27,37 @@
 				width: 47%;
 			}
 		}
-		
 	}
 
 	footer {
 		flex-direction: column;
 		text-align: center;
 		padding: 5%;
-		
 		.nasa,
 		.contact {
 			width: 100%;
 		}
 		.nasa{
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.current-day-container-stats {
+		display: flex;
+		flex-direction: column;
+		.sol-date-container {
+			display: flex;
+			flex-direction: row;
+			border-right: none;
+			border-bottom: 3px solid $secondary-color;
+		}
+	}
+
+	header  {
+		.current-day-container-stats.weekly-container-stats {
+			height: 500px;
 			margin-bottom: 40px;
 		}
 	}
