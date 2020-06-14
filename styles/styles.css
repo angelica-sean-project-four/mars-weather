@@ -427,7 +427,7 @@ header {
 
 .sol-date-container {
   border-right: 3px solid #121212;
-  padding-right: 50px;
+  padding-right: 9%;
 }
 
 header p {
@@ -507,6 +507,10 @@ header p {
 
 main {
   width: 35%;
+}
+
+main .current-day-container-stats {
+  padding: 20px;
 }
 
 .weekly-weather-container {

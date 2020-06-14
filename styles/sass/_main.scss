@@ -1,12 +1,14 @@
 main {
 	width: 35%;
+	.current-day-container-stats {
+		padding: 20px;
+	}
 }
 .weekly-weather-container {
 	width: 100%;
 }
 .weekly-weather-container .weekly-container-stats {
 	font-size: 1.2rem;
-	// width: 420px;
 	width: 100%;
 	margin-bottom: 20px;
 	.temp-container h3 {
