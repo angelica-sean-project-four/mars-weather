@@ -1,8 +1,10 @@
 header {
 	padding: 150px 0 50px;
 	h1 {
-		font-size: 4rem;
+		font-size: 3rem;
 		margin-bottom: 50px;
+		font-family: $secondary-font;
+		font-weight: 600;
 	}
 	h2 {
 		font-size: 2rem;
@@ -52,37 +54,47 @@ header p {
 	align-items: flex-start;
 	button {
 		font-size: 1.5rem;
+		font-family: $secondary-font;
+		font-weight: 600;
+		background-color: inherit;
+		color: $primary-color;
 		border: 3px solid $tertiary-color;
-		background-color: $primary-color;
 		border-radius: 5px;
 		padding: 10px;
 		margin-top: 40px;
 		transition: background-color .35s, color .35s;
 		&:hover,
 		&:focus {
-			background-color: inherit;
-			color: $primary-color;
+			background-color: $primary-color;
+			color: $secondary-color;
 		}
 	}
 }
 
 .header-image-container {
 	width: 600px;
-	height: 600px;
+	height: 400px;
 	margin-top: 50px;
+	border-radius: 5px;
 	img {
+		object-fit: cover;
 		width: 100%;
 		height: 100%;
 		border-radius: 5px;
 	}
 	figcaption {
+		background-color: $card-background-color;
 		font-size: 1rem;
 		line-height: 1.4rem;
-		font-style: italic;
-		margin-top: 20px;
+		margin-top: 40px;
+		color: $secondary-color;
+		width: 600px;
+		padding: 40px;
+		border-radius: 5px;
 		a {
 			text-decoration: underline;
-			color: blue;
+			color: $tertiary-color;
+			font-weight: 700;
 		}
 	}
 }
