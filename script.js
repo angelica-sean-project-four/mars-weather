@@ -21,6 +21,7 @@ app.getDayStats = (data) => {
 
 		// grabbing solDay and earth date
     const solDay = parseInt(solKeys[i]) + 1;
+		// Dates are based off of API returned values. If no new data is returned, dates will not change
 		const unixEpochTime = data[solKeys[i]]['First_UTC'];
 		
 		// converting date from YYYY/MM/DD to Month, Day
@@ -33,7 +34,7 @@ app.getDayStats = (data) => {
 		const dateMonth = dateFull.getMonth();
 		const dateDay = dateFull.getDate();		
 
-    const date = `${monthNames[dateMonth]} ${dateDay}`;		
+		const date = `${monthNames[dateMonth]} ${dateDay}`;		
 		
 		// converting temperature to celsius
     let tempMax = ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1);
@@ -97,7 +98,7 @@ $('.apod').on('click', function(){
     method: 'GET',
     dataType: 'json',
   }).then(function(data){
-    const { explanation, title, url} = data;
+    const { explanation, title, url, media_type} = data;
     
     const APODInfo = 
 			`<div class="exit-container">

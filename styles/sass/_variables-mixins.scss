@@ -7,3 +7,10 @@ $card-background-color: rgba(255,255,255,0.7);
 // fonts
 $primary-font: 'Roboto', sans-serif;
 $secondary-font: 'Space Mono', monospace;
+
+// mixins 
+
+@mixin text-shadow() {
+	color: $primary-color;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}

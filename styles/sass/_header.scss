@@ -108,7 +108,7 @@ header p {
 
 .header-image-container figcaption a {
 		border-bottom: 2px solid $tertiary-color;
-		color: $primary-color;
+		@include text-shadow();
 		font-weight: 700;
 		transition: color .35s;
 		&:hover,
