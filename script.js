@@ -1,7 +1,7 @@
 const app = {};
 
 // mars weather API
-app.apiUrl = `https://api.nasa.gov/insight_weather/?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB&feedtype=json&ver=1.0`
+app.apiUrl = `https://api.nasa.gov/insight_weather/?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB&feedtype=json&ver=1.0`;
 
 // astronomy photo of the day API
 app.apiAPODUrl = `https://api.nasa.gov/planetary/apod?api_key=H0DYUa5B7S8DznB16FCH8Ym8KEmJgbwTp9eb0guB`;
@@ -57,7 +57,7 @@ app.getDayStats = (data) => {
 				animation(`#high-${i}`, `${tempMax} C°`);
         animation(`#low-${i}`, `${tempMin} C°`);
         animation('.convert-temperature', `Celsius <i class="fas fa-arrow-right"></i> Fahrenheit`);
-      }
+      };
     });    
 
     const weatherEntry =
@@ -82,15 +82,15 @@ app.getDayStats = (data) => {
             Low: <span id="low-${i}" class="temperature-min">${tempMin} C°</span>
           </h3>
         </div>
-      </div>`
+      </div>`;
 
     $('.weekly-weather-container').append(weatherEntry);
     
     weeklyTemp.push(weatherEntry)
     $('.current-day-container').append(weeklyTemp[6]);
     
-  }
-}
+  };
+};
 
 $('.apod').on('click', function(){
   $.ajax({
@@ -110,6 +110,7 @@ $('.apod').on('click', function(){
 				<iframe width="560" height="315" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 			<p>${explanation}</p>`;
+
 			$('.apod-container').empty().append(APODVideo);
 		} else {
 			const APODImg =
@@ -121,17 +122,17 @@ $('.apod').on('click', function(){
 				<img src="${url}" alt="${title}">
 			</div>
 			<p>${explanation}</p>`;
+
 			$('.apod-container').empty().append(APODImg);
-		} 	
+		}; 	
 		
 		$('.modal-background').fadeIn();
-
-  })
-})
+  });
+});
 
 $('.apod-container').on('click', ".exit", function () {
 	$('.modal-background').fadeOut();
-})
+});
 
 app.init = () => {
   $.ajax({
@@ -141,7 +142,7 @@ app.init = () => {
   }).then(function(data) {
     app.getDayStats(data);
   }); 
-}
+};
 
 $(function(){
   app.init();
