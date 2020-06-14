@@ -539,6 +539,8 @@ footer {
 
 footer a {
   border-bottom: 2px solid #fa9572;
+  -webkit-transition: border-bottom .35s, color .35s;
+  transition: border-bottom .35s, color .35s;
 }
 
 footer a:hover, footer a:focus {

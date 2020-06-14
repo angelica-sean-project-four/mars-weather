@@ -9,6 +9,7 @@ footer {
 	align-items: center;
 	a {
 		border-bottom: 2px solid $tertiary-color;
+		transition: border-bottom .35s, color .35s;
 		&:hover, 
 		&:focus {
 			color: $tertiary-color;
