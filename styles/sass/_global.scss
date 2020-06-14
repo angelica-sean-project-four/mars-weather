@@ -10,6 +10,8 @@ h1, h2, h3, h4 {
 }
 
 p {
+  font-size: 1rem;
+	font-style: italic;
   margin: 0;
 }
 
@@ -39,14 +41,14 @@ button {
   padding: 0;
 }
 
+i {
+	margin-right: 5px;
+}
+
 .wrapper {
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
   display: flex;
 	justify-content: space-between;
-}
-
-i {
-	margin-right: 5px;
 }

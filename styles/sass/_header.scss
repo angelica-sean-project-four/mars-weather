@@ -7,14 +7,6 @@ header {
 	h2 {
 		font-size: 2rem;
 	}
-	.current-day-container-stats h3 {
-		width: 250px;
-	}
-	p {
-		font-size: 1rem;
-		font-style: italic;
-		margin-top: 10px;
-	}
 }
 
 .current-day-container-stats {
@@ -35,9 +27,17 @@ header {
 	}
 }
 
+.current-day-container-stats h3 {
+	width: 250px;
+}
+
 .sol-date-container {
 	border-right: 3px solid $primary-color;
 	padding-right: 50px;
+}
+
+header p {
+	margin-top: 10px;
 }
 
 .button-container {
