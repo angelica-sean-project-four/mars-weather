@@ -313,6 +313,7 @@ i {
 }
 
 .apod-container {
+  color: #121212;
   background: whitesmoke;
   width: 80%;
   display: -webkit-box;

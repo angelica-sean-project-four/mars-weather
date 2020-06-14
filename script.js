@@ -99,17 +99,30 @@ $('.apod').on('click', function(){
     dataType: 'json',
   }).then(function(data){
     const { explanation, title, url, media_type} = data;
-    
-    const APODInfo = 
+		
+		if (media_type === "video") {
+			const APODVideo = 
 			`<div class="exit-container">
+				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
+			</div>
+			<h3>${title}</h3>
+			<div class="image-container">
+				<iframe width="560" height="315" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+			<p>${explanation}</p>`;
+			$('.apod-container').empty().append(APODVideo);
+		} else {
+			const APODImg =
+				`<div class="exit-container">
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
 			<h3>${title}</h3>
 			<div class="image-container">
 				<img src="${url}" alt="${title}">
 			</div>
-      <p>${explanation}</p>`;
-		$('.apod-container').empty().append(APODInfo);
+			<p>${explanation}</p>`;
+			$('.apod-container').empty().append(APODImg);
+		} 	
 		
 		$('.modal-background').fadeIn();
 
