@@ -1,6 +1,6 @@
 .modal-background {
 	display: none;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.5);
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -8,7 +8,7 @@
 
 .apod-container {
 	color: $secondary-color;
-	background: whitesmoke;
+	background: rgb(255,255,255);
 	width: 80%;
 	display:flex;
 	flex-direction: column;
@@ -18,23 +18,40 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	padding: 40px;
+	border-radius: 30px;
 	.exit-container {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
 		width: 100%;
 		.exit {
-			font-size: 4rem;
+			font-size: 2rem;
+			transition: color .35s;
+			margin-bottom: 20px;
+			&:hover,
+			&:focus {
+				color: $tertiary-color;
+			}
 		}
+	}
+	p {
+		padding: 0px 40px;
+		line-height: 1.4rem;
+		font-style: normal;
 	}
 }
 
 .apod-container h3 {
-	font-size: 2.3rem;
+	font-size: 2rem;
+	font-family: $secondary-font;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
+
+
 .image-container {
-	margin: 20px auto;
+	margin: 20px auto 10px;
 	width: 400px;
 	height: 400px;
 	img {
@@ -42,4 +59,12 @@
 		width: 100%;
 		height: 100%;
 	}
+}
+.video-container {
+	margin: 20px auto 10px;
+	// height: 400px;
+	width: 600px;
+		iframe {
+			width: 100%;
+		}
 }

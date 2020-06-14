@@ -106,7 +106,7 @@ $('.apod').on('click', function(){
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
 			<h3>${title}</h3>
-			<div class="image-container">
+			<div class="video-container">
 				<iframe width="560" height="315" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 			<p>${explanation}</p>`;
