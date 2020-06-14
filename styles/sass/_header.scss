@@ -99,8 +99,9 @@ header p {
 }
 
 .header-image-container figcaption a {
-		text-decoration: underline;
-		color: $tertiary-color;
+		// text-decoration: underline;
+		border-bottom: 2px solid $tertiary-color;
+		color: $primary-color;
 		font-weight: 700;
 		transition: color .35s;
 		&:hover,

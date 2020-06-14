@@ -2,5 +2,33 @@ footer {
   margin-top: 100px;
   padding: 50px;
   width: 100%;
-  border-top: 8px solid $tertiary-color;
+	border-top: 8px solid $tertiary-color;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	a {
+		border-bottom: 2px solid $tertiary-color;
+		&:hover, 
+		&:focus {
+			color: $tertiary-color;
+			border-bottom: 2px solid $primary-color;
+		}
+	}
+}
+
+.nasa {
+	font-size: 1.5rem;
+	width: 60%;
+	line-height: 2rem;
+}
+
+.contact {
+	font-size: 1.2rem;
+	li {
+		margin: 20px 0px;
+	}
+	i {
+		color: $tertiary-color;
+	}
 }
