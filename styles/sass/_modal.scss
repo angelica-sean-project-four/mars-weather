@@ -15,10 +15,9 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	color: $secondary-color;
 	width: 900px;
-	padding: 40px;
-	background: rgb(255,255,255);
+	padding: 0 40px 40px;
+	background-color: $secondary-color;
 	border-radius: 30px;
 	.exit-container {
 		display: flex;
@@ -27,6 +26,7 @@
 		width: 100%;
 		.exit {
 			font-size: 2.5rem;
+			color: $primary-color;
 			transition: color .35s;
 			margin-bottom: 20px;
 			&:hover,
@@ -43,6 +43,7 @@
 
 .apod-container h3 {
 	font-size: 2rem;
+	color: $primary-color;
 	font-weight: 700;
 	border-bottom: 3px solid $tertiary-color;
 	padding-bottom: 5px;
