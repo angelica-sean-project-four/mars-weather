@@ -65,6 +65,32 @@
 		}
 	}
 
+	main {
+		.current-day-container-stats {
+			.sol-date-container {
+				display: block;
+				width: 100%;
+				padding: 10px 0px;
+			}
+			h2 {
+				line-height: 1.5rem;
+				text-align: center;
+			}
+			h2:first-child {
+				margin-bottom: 0px;
+			}
+			h3:first-child {
+				margin-top: 10px;
+				margin-bottom: 5px;
+			}
+			.temp-container h3 {
+				width: 100%;
+				text-align: center;
+			}
+		}
+
+
+	}
 	
 }
 

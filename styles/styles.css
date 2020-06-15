@@ -436,10 +436,7 @@ header {
   width: 100%;
 }
 
-.current-day-container-stats h2:first-child {
-  margin-bottom: 50px;
-}
-
+.current-day-container-stats h2:first-child,
 .current-day-container-stats h3:first-child {
   margin-bottom: 50px;
 }
@@ -539,6 +536,10 @@ main .current-day-container-stats {
   padding: 20px;
 }
 
+main .temp-container h3 {
+  width: 155px;
+}
+
 .weekly-weather-container {
   width: 100%;
 }
@@ -547,10 +548,6 @@ main .current-day-container-stats {
   font-size: 1.2rem;
   width: 100%;
   margin-bottom: 20px;
-}
-
-.weekly-weather-container .weekly-container-stats .temp-container h3 {
-  width: 155px;
 }
 
 .weekly-container-stats:first-child {
@@ -698,6 +695,26 @@ footer a:hover, footer a:focus {
   header .current-day-container-stats.weekly-container-stats {
     height: 500px;
     margin-bottom: 40px;
+  }
+  main .current-day-container-stats .sol-date-container {
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+  }
+  main .current-day-container-stats h2 {
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  main .current-day-container-stats h2:first-child {
+    margin-bottom: 0px;
+  }
+  main .current-day-container-stats h3:first-child {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  main .current-day-container-stats .temp-container h3 {
+    width: 100%;
+    text-align: center;
   }
 }
 

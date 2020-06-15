@@ -3,6 +3,9 @@ main {
 	.current-day-container-stats {
 		padding: 20px;
 	}
+	.temp-container h3 {
+		width: 155px;
+	}
 }
 .weekly-weather-container {
 	width: 100%;
@@ -11,9 +14,6 @@ main {
 	font-size: 1.2rem;
 	width: 100%;
 	margin-bottom: 20px;
-	.temp-container h3 {
-		width: 155px;
-	}
 }
 
 .weekly-container-stats:first-child {
