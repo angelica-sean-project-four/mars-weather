@@ -331,8 +331,9 @@ i {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  padding: 40px;
+  padding: 20px;
   border-radius: 30px;
+  margin-bottom: 10%;
 }
 
 .apod-container .exit-container {
@@ -360,6 +361,11 @@ i {
   color: #fa9572;
 }
 
+.apod-container .modal-paragraph {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 .apod-container p {
   padding: 0px 40px;
   line-height: 1.4rem;
@@ -375,8 +381,8 @@ i {
 
 .image-container {
   margin: 20px auto 10px;
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .image-container img {
@@ -388,7 +394,10 @@ i {
 
 .video-container {
   margin: 20px auto 10px;
-  width: 600px;
+  height: 30%;
+  width: 80%;
+  min-width: 200px;
+  max-width: 600px;
 }
 
 .video-container iframe {
@@ -705,6 +714,12 @@ footer a:hover, footer a:focus {
   main .current-day-container-stats h3:first-child {
     margin-top: 10px;
     margin-bottom: 5px;
+  }
+  .apod-container h3 {
+    font-size: 1.5rem;
+  }
+  .apod-container p {
+    padding: 10px 0px 0px;
   }
 }
 

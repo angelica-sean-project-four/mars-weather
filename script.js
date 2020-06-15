@@ -109,7 +109,9 @@ $('.apod').on('click', function(){
 			<div class="video-container">
 				<iframe width="560" height="315" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
-			<p>${explanation}</p>`;
+			<div class="modal-paragraph">
+				<p>${explanation}</p>
+			</div>`;
 
 			$('.apod-container').empty().append(APODVideo);
 		} else {
@@ -121,7 +123,9 @@ $('.apod').on('click', function(){
 			<div class="image-container">
 				<img src="${url}" alt="${title}">
 			</div>
-			<p>${explanation}</p>`;
+			<div class="modal-paragraph">
+				<p>${explanation}</p>
+			</div>`;
 
 			$('.apod-container').empty().append(APODImg);
 		}; 	

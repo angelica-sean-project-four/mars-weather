@@ -17,8 +17,9 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	padding: 40px;
+	padding: 20px;
 	border-radius: 30px;
+	margin-bottom: 10%;
 	.exit-container {
 		display: flex;
 		flex-direction: row;
@@ -34,26 +35,30 @@
 			}
 		}
 	}
+	.modal-paragraph {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
 	p {
 		padding: 0px 40px;
 		line-height: 1.4rem;
 		font-style: normal;
 	}
+	h3 {
+		font-size: 2rem;
+		font-family: $secondary-font;
+		margin-bottom: 20px;
+		text-align: center;
+	}
 }
 
-.apod-container h3 {
-	font-size: 2rem;
-	font-family: $secondary-font;
-	margin-bottom: 20px;
-	text-align: center;
-}
 
 
 
 .image-container {
 	margin: 20px auto 10px;
-	width: 400px;
-	height: 400px;
+	max-width: 400px;
+	max-height: 400px;
 	img {
 		object-fit: cover;
 		width: 100%;
@@ -62,8 +67,10 @@
 }
 .video-container {
 	margin: 20px auto 10px;
-	// height: 400px;
-	width: 600px;
+	height: 30%;
+	width: 80%;
+	min-width: 200px;
+	max-width: 600px;
 		iframe {
 			width: 100%;
 		}
