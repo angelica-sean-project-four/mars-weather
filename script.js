@@ -95,7 +95,7 @@ $('.apod').on('click', function(){
     method: 'GET',
     dataType: 'json',
   }).then(function(data){
-    const { explanation, title, url, media_type} = data;
+    const { explanation, title, url, media_type } = data;
 		
 		if (media_type === "video") {
 			const aPODVideo = 
