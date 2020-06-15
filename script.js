@@ -20,8 +20,7 @@ app.getDayStats = (data) => {
   for (let i = 0; i < solKeys.length; i++) {
 
 		// grabbing solDay and earth date
-    const solDay = parseInt(solKeys[i]);
-
+    const solDay = parseInt(solKeys[i]) + 1;
 		const unixEpochTime = data[solKeys[i]]['First_UTC'];
 		
 		// converting date from YYYY/MM/DD to Month, Day
