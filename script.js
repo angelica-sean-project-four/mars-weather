@@ -107,7 +107,7 @@ $('.apod').on('click', function(){
 			<div class="video-container">
 				<iframe width="560" height="315" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
-			<div class="modal-paragraph">
+			<div>
 				<p>${explanation}</p>
 			</div>`;
 

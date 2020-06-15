@@ -1,4 +1,9 @@
 @media (max-width: 768px) {
+
+	.apod-container {
+		min-width: 500px;
+	}
+
 	.wrapper {
 		flex-direction: column;
 	}
@@ -45,6 +50,10 @@
 }
 
 @media (max-width: 600px) {
+	.apod-container {
+		min-width: 400px;
+	}
+
 	.current-day-container-stats {
 		display: flex;
 		flex-direction: column;
@@ -99,6 +108,11 @@
 }
 
 @media (max-width: 480px) {
+
+	.apod-container {
+		min-width: 310px;
+	}
+
 	.current-day-container-stats {
 		padding: 15px;
 	}
