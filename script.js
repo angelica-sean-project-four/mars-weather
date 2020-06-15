@@ -20,14 +20,13 @@ app.getDayStats = (data) => {
   for (let i = 0; i < solKeys.length; i++) {
 
 		// grabbing solDay and earth date
-    const solDay = parseInt(solKeys[i]) + 1;
-		// Dates are based off of API returned values. If no new data is returned, dates will not change
+    const solDay = parseInt(solKeys[i]);
+
 		const unixEpochTime = data[solKeys[i]]['First_UTC'];
 		
 		// converting date from YYYY/MM/DD to Month, Day
 		const newDate = new Date(unixEpochTime);
 		const dateFull = new Date(newDate.setTime(newDate.getTime() + 1.05 * 86400000));
-		
 
 		const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
@@ -88,7 +87,6 @@ app.getDayStats = (data) => {
     
     weeklyTemp.push(weatherEntry)
     $('.current-day-container').append(weeklyTemp[6]);
-    
   };
 };
 
@@ -101,7 +99,7 @@ $('.apod').on('click', function(){
     const { explanation, title, url, media_type} = data;
 		
 		if (media_type === "video") {
-			const APODVideo = 
+			const aPODVideo = 
 			`<div class="exit-container">
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
@@ -113,9 +111,9 @@ $('.apod').on('click', function(){
 				<p>${explanation}</p>
 			</div>`;
 
-			$('.apod-container').empty().append(APODVideo);
+			$('.apod-container').empty().append(aPODVideo);
 		} else {
-			const APODImg =
+			const aPODImg =
 				`<div class="exit-container">
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
@@ -127,7 +125,7 @@ $('.apod').on('click', function(){
 				<p>${explanation}</p>
 			</div>`;
 
-			$('.apod-container').empty().append(APODImg);
+			$('.apod-container').empty().append(aPODImg);
 		}; 	
 		
 		$('.modal-background').fadeIn();

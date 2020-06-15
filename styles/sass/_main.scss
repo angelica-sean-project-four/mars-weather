@@ -1,7 +1,7 @@
 main {
 	width: 35%;
 	.current-day-container-stats {
-		padding: 20px;
+		padding: 40px;
 	}
 	.temp-container h3 {
 		width: 155px;
@@ -9,6 +9,7 @@ main {
 }
 .weekly-weather-container {
 	width: 100%;
+	margin-top: 20px;
 }
 .weekly-weather-container .weekly-container-stats {
 	font-size: 1.2rem;
