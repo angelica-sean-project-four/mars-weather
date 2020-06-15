@@ -132,8 +132,8 @@ $('.apod').on('click', function(){
 });
 
 $('.apod-container').on('click', ".exit", function () {
-  
   $('.modal-background').fadeOut();
+  $('iframe').attr('src', 'url');
 });
 
 app.init = () => {
