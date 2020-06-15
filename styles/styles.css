@@ -401,7 +401,8 @@ header {
 }
 
 .current-day-container {
-  height: 300px;
+  height: 30%;
+  min-height: 300px;
 }
 
 .heading-container h1 {
@@ -678,32 +679,25 @@ footer a:hover, footer a:focus {
             flex-direction: column;
   }
   .current-day-container-stats .sol-date-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    display: block;
     border-right: none;
     border-bottom: 3px solid #121212;
     width: 100%;
-  }
-  header .current-day-container-stats.weekly-container-stats {
-    height: 500px;
-    margin-bottom: 40px;
-  }
-  main .current-day-container-stats .sol-date-container {
-    display: block;
-    width: 100%;
     padding: 10px 0px;
   }
-  main .current-day-container-stats h2 {
+  .current-day-container-stats h2 {
     line-height: 1.5rem;
     text-align: center;
+  }
+  .current-day-container-stats .temp-container h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .current-day-container-stats .temp-container h3:first-child {
+    margin-top: 20px;
+  }
+  header .current-day-container {
+    margin-bottom: 40px;
   }
   main .current-day-container-stats h2:first-child {
     margin-bottom: 0px;
@@ -711,10 +705,6 @@ footer a:hover, footer a:focus {
   main .current-day-container-stats h3:first-child {
     margin-top: 10px;
     margin-bottom: 5px;
-  }
-  main .current-day-container-stats .temp-container h3 {
-    width: 100%;
-    text-align: center;
   }
 }
 
