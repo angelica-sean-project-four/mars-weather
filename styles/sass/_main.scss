@@ -1,20 +1,19 @@
 main {
 	width: 35%;
 	.current-day-container-stats {
-		padding: 40px;
+		padding: 7%;
 	}
 	.temp-container h3 {
 		width: 155px;
 	}
 }
+
 .weekly-weather-container {
 	width: 100%;
-	margin-top: 20px;
-}
-.weekly-weather-container .weekly-container-stats {
-	font-size: 1.2rem;
-	width: 100%;
-	margin-bottom: 20px;
+	.weekly-container-stats {
+		font-size: 1.2rem;
+		margin-bottom: 20px;
+	}
 }
 
 .weekly-container-stats:first-child {

@@ -13,8 +13,8 @@ const animation = (target, string) => {
 };
 
 app.getDayStats = (data) => {
+  
   const solKeys = data.sol_keys;
-
   const weeklyTemp = [];
 
   for (let i = 0; i < solKeys.length; i++) {
@@ -113,7 +113,7 @@ $('.apod').on('click', function(){
 			$('.apod-container').empty().append(aPODVideo);
 		} else {
 			const aPODImg =
-				`<div class="exit-container">
+			`<div class="exit-container">
 				<button class="exit" aria-label="exit-modal"><i class="fas fa-times-circle"></i></button>
 			</div>
 			<h3>${title}</h3>
@@ -132,7 +132,8 @@ $('.apod').on('click', function(){
 });
 
 $('.apod-container').on('click', ".exit", function () {
-	$('.modal-background').fadeOut();
+  
+  $('.modal-background').fadeOut();
 });
 
 app.init = () => {

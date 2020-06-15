@@ -1,5 +1,5 @@
 header {
-	padding: 150px 0 100px;
+	padding: 100px 0px;
 	width: 55%;
 }
 
@@ -9,8 +9,8 @@ header {
 
 .heading-container h1 {
 	display: inline-block;
-	font-size: 3rem;
 	font-family: $secondary-font;
+	font-size: 3rem;
 	font-weight: 600;
 	border-bottom: 3px solid $tertiary-color;
 	margin-bottom: 50px;
@@ -24,15 +24,14 @@ header {
 }
 
 .current-day-container-stats {
-	font-size: 2rem;
-	background: $card-background-color;
-	border-radius: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 40px;
+	font-size: 2rem;
+	background: $card-background-color;
+	border-radius: 5px;
+	padding: 7%;
 	width: 100%;
-	
 	h2:first-child,
 	h3:first-child {
 		margin-bottom: 50px;
@@ -48,13 +47,13 @@ header {
 }
 
 .sol-date-container {
-	border-right: 3px solid $secondary-color;
-	padding-right: 30px;
+	padding-right: 40px;
 	margin-right: 20px;
+	border-right: 3px solid $secondary-color;
 }
 
-
 header p {
+	font-style: italic;
 	margin-top: 10px;
 }
 
@@ -63,11 +62,11 @@ header p {
 	align-items: flex-start;
 	flex-direction: column;
 	button {
-		background-color: inherit;
 		color: $primary-color;
 		font-family: $secondary-font;
 		font-size: 1.5rem;
 		font-weight: 600;
+		background-color: inherit;
 		border: 3px solid $tertiary-color;
 		border-radius: 5px;
 		margin-top: 40px;
@@ -84,8 +83,8 @@ header p {
 .header-image-container {
 	border-radius: 5px;
 	margin-top: 50px;
-	width: 100%;
 	min-height: 300px;
+	width: 100%;
 	img {
 		object-fit: cover;
 		border-radius: 5px;
@@ -106,11 +105,11 @@ header p {
 
 .header-image-container figcaption a {
 	@include text-shadow();
-	border-bottom: 2px solid $tertiary-color;
 	font-weight: 700;
+	border-bottom: 2px solid $tertiary-color;
 	transition: color .35s;
-		&:hover,
-		&:focus {
-			color: $secondary-color;
-		}
+	&:hover,
+	&:focus {
+		color: $secondary-color;
+	}
 }

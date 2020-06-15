@@ -1,12 +1,12 @@
 footer {
+	@include text-shadow();
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
   padding: 30px;
   width: 100%;
 	border-top: 8px solid $tertiary-color;
-	@include text-shadow();
 	a {
 		border-bottom: 2px solid $tertiary-color;
 		transition: border-bottom .35s, color .35s;
@@ -29,8 +29,8 @@ footer {
 	font-size: 1.2rem;
 	li {
 		margin: 20px 0px;
-	}
-	i {
-		color: $tertiary-color;
+		i {
+			color: $tertiary-color;
+		}
 	}
 }
