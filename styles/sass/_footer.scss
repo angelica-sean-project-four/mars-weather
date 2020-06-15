@@ -1,13 +1,12 @@
 footer {
-	@include text-shadow();
-	margin-top: 100px;
-  padding: 30px;
-  width: 100%;
-	border-top: 8px solid $tertiary-color;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+  padding: 30px;
+  width: 100%;
+	border-top: 8px solid $tertiary-color;
+	@include text-shadow();
 	a {
 		border-bottom: 2px solid $tertiary-color;
 		transition: border-bottom .35s, color .35s;
