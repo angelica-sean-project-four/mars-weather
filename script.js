@@ -43,10 +43,6 @@ app.getDayStats = (data) => {
       if (tempMax === ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1)) {
 				tempMax = data[solKeys[i]]['AT']['mx'].toFixed(1);
         tempMin = data[solKeys[i]]['AT']['mn'].toFixed(1);
-        
-        console.log(tempMax);
-        console.log(tempMin);
-        console.log('C');
 
 				animation(`#high-${i}`, `${tempMax} F°`);
         animation(`#low-${i}`, `${tempMin} F°`);
@@ -55,10 +51,6 @@ app.getDayStats = (data) => {
       } else {
         tempMax = ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1);
         tempMin = ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1);
-
-        console.log(tempMax);
-        console.log(tempMin);
-        console.log('C')
 
 				animation(`#high-${i}`, `${tempMax} C°`);
         animation(`#low-${i}`, `${tempMin} C°`);
