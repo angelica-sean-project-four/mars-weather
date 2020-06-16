@@ -40,9 +40,13 @@ app.getDayStats = (data) => {
     
     $('.convert-temperature').on('click', () => {
     // if it is showing celsius
-    if (tempMax === ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1)) {
+      if (tempMax === ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1)) {
 				tempMax = data[solKeys[i]]['AT']['mx'].toFixed(1);
-				tempMin = data[solKeys[i]]['AT']['mn'].toFixed(1);
+        tempMin = data[solKeys[i]]['AT']['mn'].toFixed(1);
+        
+        console.log(tempMax);
+        console.log(tempMin);
+        console.log('C');
 
 				animation(`#high-${i}`, `${tempMax} F°`);
         animation(`#low-${i}`, `${tempMin} F°`);
@@ -51,6 +55,10 @@ app.getDayStats = (data) => {
       } else {
         tempMax = ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1);
         tempMin = ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1);
+
+        console.log(tempMax);
+        console.log(tempMin);
+        console.log('C')
 
 				animation(`#high-${i}`, `${tempMax} C°`);
         animation(`#low-${i}`, `${tempMin} C°`);
@@ -81,11 +89,11 @@ app.getDayStats = (data) => {
           </h3>
         </div>
       </div>`;
-
-    $('.weekly-weather-container').append(weatherEntry);
-    
+      
     weeklyTemp.push(weatherEntry)
     $('.current-day-container').append(weeklyTemp[6]);
+
+    $('.weekly-weather-container').append(weatherEntry);
   };
 };
 
