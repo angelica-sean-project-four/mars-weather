@@ -21,6 +21,9 @@ header {
 	color: $primary-color;
 	font-size: 2rem;
 	margin-bottom: 50px;
+	i {
+		color: $tertiary-color;
+	}
 }
 
 .current-day-container-stats {
