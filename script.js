@@ -34,15 +34,15 @@ app.getDayStats = (data) => {
 
 		const date = `${monthNames[dateMonth]} ${dateDay}`;		
 		
-		// converting temperature to celsius
+    // converting temperature to celsius
     let tempMax = ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1);
     let tempMin = ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1);
     
     $('.convert-temperature').on('click', () => {
     // if it is showing celsius
     if (tempMax === ((data[solKeys[i]]['AT']['mx'] - 32) * (5 / 9)).toFixed(1) && tempMin === ((data[solKeys[i]]['AT']['mn'] - 32) * (5 / 9)).toFixed(1)) {
-				tempMax = ((data[solKeys[i]]['AT']['mx'] * (9 / 5)) + 32).toFixed(1);
-				tempMin = ((data[solKeys[i]]['AT']['mn'] * (9 / 5)) + 32).toFixed(1);
+				tempMax = data[solKeys[i]]['AT']['mx'].toFixed(1);
+				tempMin = data[solKeys[i]]['AT']['mn'].toFixed(1);
 
 				animation(`#high-${i}`, `${tempMax} F°`);
         animation(`#low-${i}`, `${tempMin} F°`);
